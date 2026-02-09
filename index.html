@@ -114,7 +114,18 @@
 								
 							</li>
 							<li><a href="#specifications">Specifications </a></li>
-							<li><a href="#highlights">Highlights </a></li>
+							<li class="has-submenu">
+  <a href="#">Highlights</a>
+
+  <div class="highlight-submenu">
+    <a style="color: white;" href="#highlights">Project Highlights</a>
+    <a style="color: white;" href="#Location">Location Highlights</a>
+    <a style="color: white;" href="#Floor">Floor Plans</a>
+  </div>
+</li>
+
+
+              
 							<li><a href="#contacts">Contacts</a></li>
 						</ul>
 					</div>
@@ -141,6 +152,68 @@
 	</header>
 	<!-- Solar Mobile Menu Area -->
 <style>
+
+/* MAIN MENU – keep horizontal */
+
+
+/* Parent item */
+.solar-menu ul li {
+  position: relative;
+  list-style: none;
+}
+
+/* SUBMENU – no ul, no inherited styles */
+.highlight-submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 240px;
+  background: #184375;
+
+  display: flex;
+  flex-direction: column;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+}
+
+/* Show on hover */
+.has-submenu:hover .highlight-submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Submenu links */
+.highlight-submenu a {
+  padding: 16px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  transition: background 0.3s ease, padding-left 0.3s ease;
+}
+
+/* Hover effect */
+.highlight-submenu a:hover {
+  background: #0f2f55;
+  padding-left: 28px;
+}
+
+/* Prevent text breaking */
+.highlight-submenu a {
+  white-space: nowrap;
+}
+
+
+
+
+
+
     .nav-body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -1448,7 +1521,7 @@
 	<!-- End   pricing Section -->
 	<!--==================================================-->
 
-	<section class="map-section">
+	<section id="Location" class="map-section">
   <div class="container">
     
 	<div class="section-title d-flex justify-content-center align-items-center flex-column">
@@ -1719,7 +1792,7 @@ function openTab(evt, tabId) {
 
 
 <!-- Floor Plans Section -->
-<div class="floor-plans-section">
+<div id="Floor" class="floor-plans-section">
   <div class="container">
     <!-- <div class="text-center mb-5">
       <h4>Floor Plans</h4>
